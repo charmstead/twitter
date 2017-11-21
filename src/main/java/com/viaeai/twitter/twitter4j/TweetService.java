@@ -5,6 +5,7 @@
  */
 package com.viaeai.twitter.twitter4j;
 
+import com.viaeai.twitter.MessageMapper.TwitterMessageMapper;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ import twitter4j.TwitterException;
 
 @Service
 public class TweetService {
+    
+    private final TwitterMessageMapper messageMapper = new TwitterMessageMapper();
+    
     @Autowired
     private Twitter twitter;
     
@@ -26,6 +30,10 @@ public class TweetService {
         try {
             ResponseList<Status> homeTimeline = twitter.getHomeTimeline();
             for (Status status : homeTimeline) {
+                
+                //example
+                messageMapper.mapStatusToViaeaiMessage(status);
+                
                 tweets.add(status.getText());
             }
         } catch (TwitterException e) {

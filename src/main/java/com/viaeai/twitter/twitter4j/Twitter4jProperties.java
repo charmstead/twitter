@@ -4,11 +4,13 @@
 package com.viaeai.twitter.twitter4j;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Siva
  *
  */
+
 @ConfigurationProperties(prefix= Twitter4jProperties.TWITTER4J_PREFIX)
 public class Twitter4jProperties {
 	

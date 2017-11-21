@@ -29,7 +29,7 @@ import twitter4j.URLEntity;
 //see http://twitter4j.org/en/code-examples.html
 // https://dzone.com/articles/creating-custom-springboot-starter-for-twitter4j
 
-@Component
+
 public class TwitterMessageMapper {
    
   /**
